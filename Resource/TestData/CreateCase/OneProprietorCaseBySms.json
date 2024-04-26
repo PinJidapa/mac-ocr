@@ -1,0 +1,97 @@
+{
+    "caseType": {
+        "key": "default",
+        "code": "001",
+        "translations": {
+            "en": {
+                "label": "Remote Selling"
+            },
+            "th": {
+                "label": "Remote Selling"
+            }
+        }
+    },
+    "proprietors": [
+        {
+            "expiryDuration": "P30D",
+            "proprietorType": "insured",
+            "citizenId": "1729900599685",
+            "firstName": "กรรณชัย",
+            "middleName": null,
+            "lastName": "อ่างแก้ว",
+            "inviteType": "sms",
+            "phoneNumber": "0619926554",
+            "title": {
+                "key": "005",
+                "code": "005",
+                "sex": "M",
+                "translations": {
+                    "en": {
+                        "label": "Mr."
+                    },
+                    "th": {
+                        "label": "นาย"
+                    }
+                },
+                "value": "005",
+                "label": "Mr."
+            },
+            "dateOfBirth": "2002-12-09",
+            "meta": {
+                "insuredTitle": {
+                    "key": "005",
+                    "code": "005",
+                    "sex": "M",
+                    "translations": {
+                        "en": {
+                            "label": "Mr."
+                        },
+                        "th": {
+                            "label": "นาย"
+                        },
+                        "id": {
+                            "label": "Tuan"
+                        }
+                    },
+                    "value": "005",
+                    "label": "Mr."
+                },
+                "insuredFirstName": "กรรณชัย",
+                "insuredMiddleName": null,
+                "insuredLastName": "อ่างแก้ว"
+            },
+            "verifications": [
+                {
+                    "frontIdCardConfig": {
+                        "required": true,
+                        "isEditable": true,
+                        "dependenciesRequired": false,
+                        "threshHold": 0.8,
+                        "attempts": 3
+                    },
+                    "backIdCardConfig": {
+                        "required": true,
+                        "isEditable": true,
+                        "dependenciesRequired": false,
+                        "threshHold": 0.8,
+                        "attempts": 3
+                    },
+                    "dopaConfig": {
+                        "required": false,
+                        "isEditable": true,
+                        "dependenciesRequired": true,
+                        "attempts": 3
+                    },
+                    "idFaceRecognitionConfig": {
+                        "required": true,
+                        "isEditable": true,
+                        "dependenciesRequired": false,
+                        "attempts": 1,
+                        "threshHold": 0.8
+                    }
+                }
+            ]
+        }
+],
+    "attachMeetingRoom": true
+}

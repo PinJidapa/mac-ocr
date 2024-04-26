@@ -1,0 +1,228 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "status": {
+            "type": "string",
+            "const": "inProgress"
+        },
+        "caseStatus": {
+            "type": "string",
+            "const": "inProgress"
+        },
+        "proprietors": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "proprietorType": {
+                        "type": "string",
+                        "const": "insured"
+                    },
+                    "inviteType": {
+                        "type": "string",
+                        "const": "sms"
+                    },
+                    "citizenId": {
+                        "type": "string"
+                    },
+                    "firstName": {
+                        "type": "string",
+                        "const": "กรรณชัย"
+                    },
+                    "middleName": {
+                        "type": [
+                            "string",
+                            "null"
+                        ],
+                        "const": null
+                    },
+                    "lastName": {
+                        "type": "string",
+                        "const": "อ่างแก้ว"
+                    },
+                    "dateOfBirth": {
+                        "type": "string",
+                        "const": "2002-12-09"
+                    },
+                    "phoneNumber": {
+                        "type": "string",
+                        "const": "0619926554"
+                    },
+                    "verificationCache": {
+                        "type": "object",
+                        "properties": {
+                            "meta": {
+                                "type": "object",
+                                "properties": {
+                                    "proprietor": {
+                                        "type": "object",
+                                        "properties": {
+                                            "lastName": {
+                                                "type": "string",
+                                                "const": "อ่างแก้ว"
+                                            },
+                                            "firstName": {
+                                                "type": "string",
+                                                "const": "กรรณชัย"
+                                            }
+                                        },
+                                        "required": [
+                                            "lastName",
+                                            "firstName"
+                                        ]
+                                    },
+                                    "insuredLastName": {
+                                        "type": "string",
+                                        "const": "อ่างแก้ว"
+                                    },
+                                    "insuredFirstName": {
+                                        "type": "string",
+                                        "const": "กรรณชัย"
+                                    }
+                                },
+                                "required": [
+                                    "proprietor",
+                                    "insuredLastName",
+                                    "insuredFirstName"
+                                ]
+                            },
+                            "status": {
+                                "type": "string",
+                                "const": "open"
+                            },
+                            "lastName": {
+                                "type": "string",
+                                "const": "อ่างแก้ว"
+                            },
+                            "citizenId": {
+                                "type": "string",
+                                "const": "1729900599685"
+                            },
+                            "firstName": {
+                                "type": "string",
+                                "const": "กรรณชัย"
+                            },
+                            "kycStatus": {
+                                "type": "string",
+                                "const": "open"
+                            },
+                            "dateOfBirth": {
+                                "type": "string",
+                                "const": "2002-12-09"
+                            },
+                            "phoneNumber": {
+                                "type": "string",
+                                "const": "0619926554"
+                            },
+                            "backIdCardConfig": {
+                                "$ref": "#/definitions/idCardConfig"
+                            },
+                            "frontIdCardConfig": {
+                                "$ref": "#/definitions/idCardConfig"
+                            },
+                            "idFaceRecognitionConfig": {
+                                "$ref": "#/definitions/idFaceRecognitionConfig"
+                            }
+                        },
+                        "required": [
+                            "meta",
+                            "status",
+                            "lastName",
+                            "citizenId",
+                            "firstName",
+                            "kycStatus",
+                            "dateOfBirth",
+                            "phoneNumber",
+                            "backIdCardConfig",
+                            "frontIdCardConfig",
+                            "idFaceRecognitionConfig"
+                        ]
+                    }
+                },
+                "required": [
+                    "proprietorType",
+                    "inviteType",
+                    "citizenId",
+                    "firstName",
+                    "lastName",
+                    "dateOfBirth",
+                    "phoneNumber",
+                    "verificationCache"
+                ]
+            }
+        }
+    },
+    "required": [
+        "userId",
+        "status",
+        "caseStatus",
+        "proprietors"
+    ],
+    "definitions": {
+        "idCardConfig": {
+            "type": "object",
+            "properties": {
+                "attempts": {
+                    "type": "integer",
+                    "const": 3
+                },
+                "required": {
+                    "type": "boolean",
+                    "const": true
+                },
+                "isEditable": {
+                    "type": "boolean",
+                    "const": true
+                },
+                "threshHold": {
+                    "type": "number",
+                    "const": 0.8
+                },
+                "dependenciesRequired": {
+                    "type": "boolean",
+                    "const": false
+                }
+            },
+            "required": [
+                "attempts",
+                "required",
+                "isEditable",
+                "threshHold",
+                "dependenciesRequired"
+            ]
+        },
+        "idFaceRecognitionConfig": {
+            "type": "object",
+            "properties": {
+                "attempts": {
+                    "type": "integer",
+                    "const": 1
+                },
+                "required": {
+                    "type": "boolean",
+                    "const": true
+                },
+                "threshHold": {
+                    "type": "number",
+                    "const": 0.8
+                },
+                "livenessProvider": {
+                    "type": "string",
+                    "const": "facetecXAWS"
+                },
+                "dependenciesRequired": {
+                    "type": "boolean",
+                    "const": false
+                }
+            },
+            "required": [
+                "attempts",
+                "required",
+                "threshHold",
+                "livenessProvider",
+                "dependenciesRequired"
+            ]
+        }
+    }
+}

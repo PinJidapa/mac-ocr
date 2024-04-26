@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.11.4 on darwin)" generated="2024-04-03T12:30:15.638593" rpa="false" schemaversion="5">
+<suite id="s1" name="TS04" source="/Users/pinpinn/remote-selling/TestCase/TS04.robot">
+<test id="s1-t1" name="TS04 Close The Case To Be Expired" line="20">
+<kw name="Get Token" owner="GetTokenPage">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-04-03T12:30:15.807954" level="INFO">${data} = {'client_id': 'ktaxa-case-keeper-service-account', 'client_secret': 'KF566Bls2x6zWyMrODfJ5E2B60oJdBld', 'grant_type': 'client_credentials'}</msg>
+<var>${data}</var>
+<arg>client_id=${clientId}</arg>
+<arg>client_secret=${clientSecret}</arg>
+<arg>grant_type=client_credentials</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-04-03T12:30:15.807775" elapsed="0.000194"/>
+</kw>
+<kw name="POST" owner="RequestsLibrary">
+<msg time="2024-04-03T12:30:15.969403" level="INFO">POST Request : url=https://portal-uat.mac-non-prod.appmanteam.com/auth/realms/mac-portal/protocol/openid-connect/token 
+ path_url=/auth/realms/mac-portal/protocol/openid-connect/token 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '120', 'Content-Type': 'application/x-www-form-urlencoded'} 
+ body=client_id=ktaxa-case-keeper-service-account&amp;client_secret=KF566Bls2x6zWyMrODfJ5E2B60oJdBld&amp;grant_type=client_credentials 
+ </msg>
+<msg time="2024-04-03T12:30:15.969571" level="INFO">POST Response : url=https://portal-uat.mac-non-prod.appmanteam.com/auth/realms/mac-portal/protocol/openid-connect/token 
+ status=200, reason=OK 
+ headers={'Date': 'Wed, 03 Apr 2024 05:30:16 GMT', 'Content-Type': 'application/json', 'Content-Length': '1726', 'Connection': 'keep-alive', 'Cache-Control': 'no-store', 'Pragma': 'no-cache', 'Referrer-Policy': 'no-referrer', 'Set-Cookie': 'KC_RESTART=; Version=1; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Max-Age=0; Path=/auth/realms/mac-portal/; Secure; HttpOnly', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains', 'X-Content-Type-Options': 'nosniff', 'X-Frame-Options': 'SAMEORIGIN', 'X-Xss-Protection': '1; mode=block'} 
+ body={"access_token":"eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJod214aVRfaDlEQ0RyQ0dJT2lnOU5qU09xb2lpZzFSSFAxUUNubTBSaC1NIn0.eyJleHAiOjE3MTIxMzY2MTYsImlhdCI6MTcxMjEyMjIxNiwianRpIjoiMzJlMzZkMTMtODA3Mi00ZTViLWFkMzctYjg4MzMzNGY0ZDRjIiwiaXNzIjoiaHR0cHM6Ly9wb3J0YWwtdWF0Lm1hYy1ub24tcHJvZC5hcHBtYW50ZWFtLmNvbS9hdXRoL3JlYWxtcy9tYWMtcG9ydGFsIiwiYXVkIjpbIm1hYy1tYW5zaW9uIiwibWFjLW1hbnNpb25fd2ViIl0sInN1YiI6IjRjY2U0YzMzLWE4MWItNDMzMy1iODEyLTUyNGU1ODM1ZDc2ZiIsInR5cCI6IkJlYXJlciIsImF6cCI6Imt0YXhhLWNhc2Uta2VlcGVyLXNlcnZpY2UtYWNjb3VudCIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiYWdlbnQiLCJkZWZhdWx0LXJvbGVzLW1hYy1wb3J0YWwiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsibWFjLW1hbnNpb24iOnsicm9sZXMiOlsiYWdlbnQiXX0sIm1hYy1tYW5zaW9uX3dlYiI6eyJyb2xlcyI6WyJhZ2VudCJdfX0sInNjb3BlIjoiZ3JvdXBzIGFnZW50X2NvZGUgbGljZW5zZV9ubyBwcm9maWxlIHVzZXJfYXR0cmlidXRlIGVtYWlsIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJjbGllbnRIb3N0IjoiMTYxLjgyLjE2MC4xOTQiLCJwcm92aWRlciI6Imt0YXhhLWIyZSIsInByZWZlcnJlZF91c2VybmFtZSI6InNlcnZpY2UtYWNjb3VudC1rdGF4YS1jYXNlLWtlZXBlci1zZXJ2aWNlLWFjY291bnQiLCJjbGllbnRBZGRyZXNzIjoiMTYxLjgyLjE2MC4xOTQiLCJjbGllbnRfaWQiOiJrdGF4YS1jYXNlLWtlZXBlci1zZXJ2aWNlLWFjY291bnQifQ.H5UZoV-DNKQXoYrAwYUDvOg1-A_Jp097WnH62dDhLUwLJ9baTiaQRi1C2gwPvxhvexc9sPcFMWxjaAX50tmKx73MNLKslPXh5q8U3vxwWiSV0XZ92LjiRRMugSdlc0qBj1uBuhx7mifs-EkRmOx7GXRw1VeTbeo2ZkMIw7GUhoN2yRu-a2FE5DoHNaP4cKwuU46sbeC9a0xl29nQjOcpVMnufd93ft7Ns9-bMM-PBPXGO3MX-CtgyJLutmK7OAksp-JAEXnm6BwQ5XfLP2HUfQs2LbsLVHWeiCWXPgsllRXmEngkliogJfBAoG8LPuu7MipI47hkOWxbRDQqIFaoWw","expires_in":14400,"refresh_expires_in":0,"token_type":"Bearer","not-before-policy":0,"scope":"groups agent_code license_no profile user_attribute email"} 
+ </msg>
+<msg time="2024-04-03T12:30:15.969791" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>${authUrl}</arg>
+<arg>data=${data}</arg>
+<doc>Sends a POST request.</doc>
+<status status="PASS" start="2024-04-03T12:30:15.808050" elapsed="0.161778"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-04-03T12:30:15.970873" level="INFO">${responseBody} = {"access_token":"eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJod214aVRfaDlEQ0RyQ0dJT2lnOU5qU09xb2lpZzFSSFAxUUNubTBSaC1NIn0.eyJleHAiOjE3MTIxMzY2MTYsImlhdCI6MTcxMjEyMjIxNiwianRpIjoiMzJlMzZkMTMtODA...</msg>
+<var>${responseBody}</var>
+<arg>${response.text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-04-03T12:30:15.970220" elapsed="0.000682"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-04-03T12:30:15.971386" level="INFO">${responseDict} = {'access_token': 'eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJod214aVRfaDlEQ0RyQ0dJT2lnOU5qU09xb2lpZzFSSFAxUUNubTBSaC1NIn0.eyJleHAiOjE3MTIxMzY2MTYsImlhdCI6MTcxMjEyMjIxNiwianRpIjoiMzJlMzZkMTMtOD...</msg>
+<var>${responseDict}</var>
+<arg>json.loads($responseBody)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-04-03T12:30:15.971071" elapsed="0.000342"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2024-04-03T12:30:15.971752" level="INFO">${accessToken} = eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJod214aVRfaDlEQ0RyQ0dJT2lnOU5qU09xb2lpZzFSSFAxUUNubTBSaC1NIn0.eyJleHAiOjE3MTIxMzY2MTYsImlhdCI6MTcxMjEyMjIxNiwianRpIjoiMzJlMzZkMTMtODA3Mi00ZTViLWFkMzct...</msg>
+<var>${accessToken}</var>
+<arg>${responseDict}</arg>
+<arg>access_token</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2024-04-03T12:30:15.971574" elapsed="0.000202"/>
+</kw>
+<kw name="Return From Keyword" owner="BuiltIn">
+<msg time="2024-04-03T12:30:15.972007" level="INFO">Returning from the enclosing user keyword.</msg>
+<arg>${accessToken}</arg>
+<doc>Returns from the enclosing user keyword.</doc>
+<status status="PASS" start="2024-04-03T12:30:15.971937" elapsed="0.000139"/>
+</kw>
+<msg time="2024-04-03T12:30:15.972202" level="INFO">${accessToken} = eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJod214aVRfaDlEQ0RyQ0dJT2lnOU5qU09xb2lpZzFSSFAxUUNubTBSaC1NIn0.eyJleHAiOjE3MTIxMzY2MTYsImlhdCI6MTcxMjEyMjIxNiwianRpIjoiMzJlMzZkMTMtODA3Mi00ZTViLWFkMzct...</msg>
+<var>${accessToken}</var>
+<arg>${clientId}</arg>
+<arg>${clientSecret}</arg>
+<arg>${authUrl}</arg>
+<doc>Get a token from the api Gateway for making authenticated requests.
+Requires
+    - the clientId and the clientSecret
+    - autorization url</doc>
+<status status="PASS" start="2024-04-03T12:30:15.807270" elapsed="0.164956"/>
+</kw>
+<kw name="Create Case" owner="CreateCasePage">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-04-03T12:30:15.972933" level="INFO">${headers} = {}</msg>
+<var>${headers}</var>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-04-03T12:30:15.972817" elapsed="0.000138"/>
+</kw>
+<kw name="Set To Dictionary" owner="Collections">
+<arg>${headers}</arg>
+<arg>Content-Type</arg>
+<arg>application/json</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" start="2024-04-03T12:30:15.973086" elapsed="0.000108"/>
+</kw>
+<kw name="Set To Dictionary" owner="Collections">
+<arg>${headers}</arg>
+<arg>Authorization</arg>
+<arg>Bearer ${accessToken}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" start="2024-04-03T12:30:15.973302" elapsed="0.000106"/>
+</kw>
+<kw name="Get File" owner="OperatingSystem">
+<msg time="2024-04-03T12:30:15.973666" level="INFO" html="true">Getting file '&lt;a href="file:///Users/pinpinn/remote-selling/Resource/TestData/CreateCase/OneProprietorCaseBySms.json"&gt;/Users/pinpinn/remote-selling/Resource/TestData/CreateCase/OneProprietorCaseBySms.json&lt;/a&gt;'.</msg>
+<msg time="2024-04-03T12:30:15.974057" level="INFO">${filePath} = {
+    "caseType": {
+        "key": "default",
+        "code": "001",
+        "translations": {
+            "en": {
+                "label": "Remote Selling"
+            },
+            "th": {
+        ...</msg>
+<var>${filePath}</var>
+<arg>${EXECDIR}/Resource/TestData/CreateCase/${caseType}.json</arg>
+<doc>Returns the contents of a specified file.</doc>
+<status status="PASS" start="2024-04-03T12:30:15.973538" elapsed="0.000620"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-04-03T12:30:15.974539" level="INFO">${jsonData} = {'caseType': {'key': 'default', 'code': '001', 'translations': {'en': {'label': 'Remote Selling'}, 'th': {'label': 'Remote Selling'}}}, 'proprietors': [{'expiryDuration': 'P30D', 'proprietorType': 'in...</msg>
+<var>${jsonData}</var>
+<arg>json.loads('''${filePath}''')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-04-03T12:30:15.974274" elapsed="0.000284"/>
+</kw>
+<kw name="POST" owner="RequestsLibrary">
+<msg time="2024-04-03T12:30:19.742020" level="INFO">POST Request : url=https://portal-uat.mac-non-prod.appmanteam.com/api/v2/case-keeper/cases 
+ path_url=/api/v2/case-keeper/cases 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Authorization': 'Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJod214aVRfaDlEQ0RyQ0dJT2lnOU5qU09xb2lpZzFSSFAxUUNubTBSaC1NIn0.eyJleHAiOjE3MTIxMzY2MTYsImlhdCI6MTcxMjEyMjIxNiwianRpIjoiMzJlMzZkMTMtODA3Mi00ZTViLWFkMzctYjg4MzMzNGY0ZDRjIiwiaXNzIjoiaHR0cHM6Ly9wb3J0YWwtdWF0Lm1hYy1ub24tcHJvZC5hcHBtYW50ZWFtLmNvbS9hdXRoL3JlYWxtcy9tYWMtcG9ydGFsIiwiYXVkIjpbIm1hYy1tYW5zaW9uIiwibWFjLW1hbnNpb25fd2ViIl0sInN1YiI6IjRjY2U0YzMzLWE4MWItNDMzMy1iODEyLTUyNGU1ODM1ZDc2ZiIsInR5cCI6IkJlYXJlciIsImF6cCI6Imt0YXhhLWNhc2Uta2VlcGVyLXNlcnZpY2UtYWNjb3VudCIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiYWdlbnQiLCJkZWZhdWx0LXJvbGVzLW1hYy1wb3J0YWwiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsibWFjLW1hbnNpb24iOnsicm9sZXMiOlsiYWdlbnQiXX0sIm1hYy1tYW5zaW9uX3dlYiI6eyJyb2xlcyI6WyJhZ2VudCJdfX0sInNjb3BlIjoiZ3JvdXBzIGFnZW50X2NvZGUgbGljZW5zZV9ubyBwcm9maWxlIHVzZXJfYXR0cmlidXRlIGVtYWlsIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJjbGllbnRIb3N0IjoiMTYxLjgyLjE2MC4xOTQiLCJwcm92aWRlciI6Imt0YXhhLWIyZSIsInByZWZlcnJlZF91c2VybmFtZSI6InNlcnZpY2UtYWNjb3VudC1rdGF4YS1jYXNlLWtlZXBlci1zZXJ2aWNlLWFjY291bnQiLCJjbGllbnRBZGRyZXNzIjoiMTYxLjgyLjE2MC4xOTQiLCJjbGllbnRfaWQiOiJrdGF4YS1jYXNlLWtlZXBlci1zZXJ2aWNlLWFjY291bnQifQ.H5UZoV-DNKQXoYrAwYUDvOg1-A_Jp097WnH62dDhLUwLJ9baTiaQRi1C2gwPvxhvexc9sPcFMWxjaAX50tmKx73MNLKslPXh5q8U3vxwWiSV0XZ92LjiRRMugSdlc0qBj1uBuhx7mifs-EkRmOx7GXRw1VeTbeo2ZkMIw7GUhoN2yRu-a2FE5DoHNaP4cKwuU46sbeC9a0xl29nQjOcpVMnufd93ft7Ns9-bMM-PBPXGO3MX-CtgyJLutmK7OAksp-JAEXnm6BwQ5XfLP2HUfQs2LbsLVHWeiCWXPgsllRXmEngkliogJfBAoG8LPuu7MipI47hkOWxbRDQqIFaoWw', 'Content-Length': '1528'} 
+ body=b'{"caseType": {"key": "default", "code": "001", "translations": {"en": {"label": "Remote Selling"}, "th": {"label": "Remote Selling"}}}, "proprietors": [{"expiryDuration": "P30D", "proprietorType": "insured", "citizenId": "1729900599685", "firstName": "\\u0e01\\u0e23\\u0e23\\u0e13\\u0e0a\\u0e31\\u0e22", "middleName": null, "lastName": "\\u0e2d\\u0e48\\u0e32\\u0e07\\u0e41\\u0e01\\u0e49\\u0e27", "inviteType": "sms", "phoneNumber": "0619926554", "title": {"key": "005", "code": "005", "sex": "M", "translations": {"en": {"label": "Mr."}, "th": {"label": "\\u0e19\\u0e32\\u0e22"}}, "value": "005", "label": "Mr."}, "dateOfBirth": "2002-12-09", "meta": {"insuredTitle": {"key": "005", "code": "005", "sex": "M", "translations": {"en": {"label": "Mr."}, "th": {"label": "\\u0e19\\u0e32\\u0e22"}, "id": {"label": "Tuan"}}, "value": "005", "label": "Mr."}, "insuredFirstName": "\\u0e01\\u0e23\\u0e23\\u0e13\\u0e0a\\u0e31\\u0e22", "insuredMiddleName": null, "insuredLastName": "\\u0e2d\\u0e48\\u0e32\\u0e07\\u0e41\\u0e01\\u0e49\\u0e27"}, "verifications": [{"frontIdCardConfig": {"required": true, "isEditable": true, "dependenciesRequired": false, "threshHold": 0.8, "attempts": 3}, "backIdCardConfig": {"required": true, "isEditable": true, "dependenciesRequired": false, "threshHold": 0.8, "attempts": 3}, "dopaConfig": {"required": false, "isEditable": true, "dependenciesRequired": true, "attempts": 3}, "idFaceRecognitionConfig": {"required": true, "isEditable": true, "dependenciesRequired": false, "attempts": 1, "threshHold": 0.8}}]}], "attachMeetingRoom": true}' 
+ </msg>
+<msg time="2024-04-03T12:30:19.742301" level="INFO">POST Response : url=https://portal-uat.mac-non-prod.appmanteam.com/api/v2/case-keeper/cases 
+ status=201, reason=Created 
+ headers={'Date': 'Wed, 03 Apr 2024 05:30:19 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '1695', 'Connection': 'keep-alive', 'Access-Control-Allow-Credentials': 'true', 'Access-Control-Expose-Headers': 'X-Frame-Options,Strict-Transport-Security,X-Content-Type-Options,X-XSS-Protection', 'Content-Encoding': 'gzip', 'Etag': 'W/"284f-+UzzwhDBkJP6R0DvnXK7XhR31dk"', 'Set-Cookie': 'connect.sid=s%3AIIoaLiYcbvz0zANSF3F1tjOCQGjed0EH.tX8Y8iJajSo9HU3H33CFz%2BlQz1k4zt0O6Mxqpw1ICOA; Path=/; HttpOnly', 'Strict-Transport-Security': 'max-age=315360000; includeSubDomains; preload', 'Vary': 'Accept-Encoding', 'X-Content-Type-Options': 'nosniff', 'X-Xss-Protection': '1; mode=block'} 
+ body={"id":"7eedb8fd-bb65-425c-bb5b-3e1644400569","createdAt":"2024-04-03T05:30:16.267Z","updatedAt":"2024-04-03T05:30:17.030Z","deletedAt":null,"userId":"4cce4c33-a81b-4333-b812-524e5835d76f","user":{"id":"4cce4c33-a81b-4333-b812-524e5835d76f","createdAt":"2024-03-27T05:13:57.490Z","updatedAt":"2024-03-27T05:13:57.490Z","deletedAt":null,"username":"service-account-ktaxa-case-keeper-service-account","firstName":null,"lastName":null,"email":null,"phoneNumber":null,"licenseNumber":null,"licenseExpiresAt":null,"agentCode":null,"role":{"id":"f167dc63-667e-4942-984d-f0cd3ee3e3e2","name":"agent"},"groups":[]},"status":"inProgress","caseStatus":"inProgress","remark":null,"appNumber":null,"department":null,"meetingRoomId":"08f0-4e4c-98aa","caseType":{"key":"default","code":"001","translations":{"en":{"label":"Remote Selling"},"th":{"label":"Remote Selling"}}},"voiceScripts":null,"proprietors":[{"id":"6db3296a-e15b-47bf-90ce-ba9800a4fd7e","createdAt":"2024-04-03T05:30:17.525Z","updatedAt":"2024-04-03T05:30:19.144Z","deletedAt":null,"userId":"4cce4c33-a81b-4333-b812-524e5835d76f","caseId":"7eedb8fd-bb65-425c-bb5b-3e1644400569","guardianId":null,"proprietorType":"insured","inviteType":"sms","countryCode":"TH","citizenId":"1729900599685","passportNumber":null,"title":{"key":"005","code":"005","sex":"M","translations":{"en":{"label":"Mr."},"th":{"label":"นาย"}},"value":"005","label":"Mr."},"firstName":"กรรณชัย","middleName":null,"lastName":"อ่างแก้ว","dateOfBirth":"2002-12-09","phoneNumber":"0619926554","email":null,"verificationRef":"7c7c9e3c-fd6a-4be7-a9f5-449c98cfa23e","verificationCache":{"ref":null,"verificationId":null,"reusedResults":null,"userId":"4cce4c33-a81b-4333-b812-524e5835d76f","status":"open","notifyType":"none","expiresAt":"2024-05-03T05:30:17.989Z","verifiedAt":null,"frontIdCardConfig":{"attempts":3,"required":true,"isEditable":true,"threshHold":0.8,"validations":[],"currentAttempt":3,"dependenciesRequired":false,"compareNonEssentialFields":false},"passportConfig":{"required":false},"backIdCardConfig":{"attempts":3,"required":true,"isEditable":true,"threshHold":0.8,"currentAttempt":3,"dependenciesRequired":false},"idFaceRecognitionConfig":{"attempts":1,"required":true,"threshHold":0.8,"currentAttempt":1,"livenessProvider":"facetecXAWS","dependenciesRequired":false},"dipChipConfig":{"required":false},"amloConfig":{"required":false},"dopaConfig":{"required":false},"criminalCheckConfig":{"required":false},"sanctionConfig":{"required":false},"employmentVerificationConfig":{"required":false},"bankruptcyConfig":{"required":false},"educationCheckConfig":{"required":false},"incomeCheckConfig":{"required":false},"referenceCheckConfig":{"required":false},"citizenId":"1729900599685","passportNumber":null,"laserCode":null,"firstName":"กรรณชัย","middleName":null,"lastName":"อ่างแก้ว","dateOfBirth":"2002-12-09","email":null,"phoneNumber":"0619926554","frontIdCardResult":null,"frontIdCardResults":null,"passportResult":null,"passportResults":null,"backIdCardResult":null,"backIdCardResults":null,"idFaceRecognitionResult":null,"idFaceRecognitionResults":null,"amloResult":null,"amloResults":null,"dopaResult":null,"dopaResults":null,"dipChipResult":null,"dipChipResults":null,"criminalCheckResult":null,"criminalCheckResults":null,"employmentVerificationResult":null,"employmentVerificationResults":null,"bankruptcyResult":null,"bankruptcyResults":null,"sanctionResult":null,"sanctionResults":null,"educationCheckResult":null,"educationCheckResults":null,"incomeCheckResult":null,"incomeCheckResults":null,"referenceCheckResult":null,"referenceCheckResults":null,"appointment":null,"pdpaConsented":false,"feedback":null,"meta":{"proprietor":{"case":{"id":"7eedb8fd-bb65-425c-bb5b-3e1644400569","caseType":{"key":"default","code":"001","translations":{"en":{"label":"Remote Selling"},"th":{"label":"Remote Selling"}}},"policies":[]},"lastName":"อ่างแก้ว","firstName":"กรรณชัย"},"insuredTitle":{"key":"005","sex":"M","code":"005","label":"Mr.","value":"005","translations":{"en":{"label":"Mr."},"id":{"label":"Tuan"},"th":{"label":"นาย"}}},"insuredLastName":"อ่างแก้ว","insuredFirstName":"กรรณชัย","insuredMiddleName":null},"kycStatus":"open","kycVerifiedAt":null,"dipChipStatus":"unspecified","dipChipVerifiedAt":null,"criminalCheckStatus":"unspecified","criminalCheckVerifiedAt":null,"employmentVerificationStatus":"unspecified","employmentVerificationVerifiedAt":null,"bankruptcyStatus":"unspecified","bankruptcyVerifiedAt":null,"sanctionStatus":"unspecified","sanctionVerifiedAt":null,"educationCheckStatus":"unspecified","educationCheckVerifiedAt":null,"educationCheckDocumentStatus":"unspecified","incomeCheckStatus":"unspecified","incomeCheckVerifiedAt":null,"referenceCheckStatus":"unspecified","referenceCheckVerifiedAt":null,"smsNotifyContent":null,"emailNotifyContent":null,"emailNotifySubject":null,"approvalStatus":"inProgress","approvalRemark":null,"position":null,"department":null,"id":"7c7c9e3c-fd6a-4be7-a9f5-449c98cfa23e","createdAt":"2024-04-03T05:30:18.047Z","updatedAt":"2024-04-03T05:30:18.047Z","deletedAt":null},"certificationNumber":null,"memberNumber":null,"expiresAt":null,"verifiedAt":null,"expiryDuration":"P30D","meta":{"insuredTitle":{"key":"005","code":"005","sex":"M","translations":{"en":{"label":"Mr."},"th":{"label":"นาย"},"id":{"label":"Tuan"}},"value":"005","label":"Mr."},"insuredFirstName":"กรรณชัย","insuredMiddleName":null,"insuredLastName":"อ่างแก้ว","proprietor":{"firstName":"กรรณชัย","lastName":"อ่างแก้ว","case":{"id":"7eedb8fd-bb65-425c-bb5b-3e1644400569","caseType":{"key":"default","code":"001","translations":{"en":{"label":"Remote Selling"},"th":{"label":"Remote Selling"}}},"policies":[]}}},"verifications":[{"ref":null,"verificationId":null,"reusedResults":null,"proprietors":[{"id":"6db3296a-e15b-47bf-90ce-ba9800a4fd7e","createdAt":"2024-04-03T05:30:17.525Z","updatedAt":"2024-04-03T05:30:17.525Z","deletedAt":null,"userId":"4cce4c33-a81b-4333-b812-524e5835d76f","caseId":"7eedb8fd-bb65-425c-bb5b-3e1644400569","guardianId":null,"proprietorType":"insured","inviteType":"sms","countryCode":"TH","citizenId":"1729900599685","passportNumber":null,"title":{"key":"005","sex":"M","code":"005","label":"Mr.","value":"005","translations":{"en":{"label":"Mr."},"th":{"label":"นาย"}}},"firstName":"กรรณชัย","middleName":null,"lastName":"อ่างแก้ว","dateOfBirth":"2002-12-09","phoneNumber":"0619926554","email":null,"verificationRef":null,"verificationCache":null,"certificationNumber":null,"memberNumber":null,"expiresAt":null,"verifiedAt":null}],"userId":"4cce4c33-a81b-4333-b812-524e5835d76f","status":"open","notifyType":"none","expiresAt":"2024-05-03T05:30:17.989Z","verifiedAt":null,"frontIdCardConfig":{"attempts":3,"required":true,"isEditable":true,"threshHold":0.8,"validations":[],"currentAttempt":3,"dependenciesRequired":false,"compareNonEssentialFields":false},"passportConfig":{"required":false},"backIdCardConfig":{"attempts":3,"required":true,"isEditable":true,"threshHold":0.8,"currentAttempt":3,"dependenciesRequired":false},"idFaceRecognitionConfig":{"attempts":1,"required":true,"threshHold":0.8,"currentAttempt":1,"livenessProvider":"facetecXAWS","dependenciesRequired":false},"dipChipConfig":{"required":false},"amloConfig":{"required":false},"dopaConfig":{"required":false},"criminalCheckConfig":{"required":false},"sanctionConfig":{"required":false},"employmentVerificationConfig":{"required":false},"bankruptcyConfig":{"required":false},"educationCheckConfig":{"required":false},"incomeCheckConfig":{"required":false},"referenceCheckConfig":{"required":false},"citizenId":"1729900599685","passportNumber":null,"laserCode":null,"firstName":"กรรณชัย","middleName":null,"lastName":"อ่างแก้ว","dateOfBirth":"2002-12-09","email":null,"phoneNumber":"0619926554","frontIdCardResult":null,"frontIdCardResults":null,"passportResult":null,"passportResults":null,"backIdCardResult":null,"backIdCardResults":null,"idFaceRecognitionResult":null,"idFaceRecognitionResults":null,"amloResult":null,"amloResults":null,"dopaResult":null,"dopaResults":null,"dipChipResult":null,"dipChipResults":null,"criminalCheckResult":null,"criminalCheckResults":null,"employmentVerificationResult":null,"employmentVerificationResults":null,"bankruptcyResult":null,"bankruptcyResults":null,"sanctionResult":null,"sanctionResults":null,"educationCheckResult":null,"educationCheckResults":null,"incomeCheckResult":null,"incomeCheckResults":null,"referenceCheckResult":null,"referenceCheckResults":null,"appointment":null,"pdpaConsented":false,"feedback":null,"meta":{"proprietor":{"case":{"id":"7eedb8fd-bb65-425c-bb5b-3e1644400569","caseType":{"key":"default","code":"001","translations":{"en":{"label":"Remote Selling"},"th":{"label":"Remote Selling"}}},"policies":[]},"lastName":"อ่างแก้ว","firstName":"กรรณชัย"},"insuredTitle":{"key":"005","sex":"M","code":"005","label":"Mr.","value":"005","translations":{"en":{"label":"Mr."},"id":{"label":"Tuan"},"th":{"label":"นาย"}}},"insuredLastName":"อ่างแก้ว","insuredFirstName":"กรรณชัย","insuredMiddleName":null},"kycStatus":"open","kycVerifiedAt":null,"dipChipStatus":"unspecified","dipChipVerifiedAt":null,"criminalCheckStatus":"unspecified","criminalCheckVerifiedAt":null,"employmentVerificationStatus":"unspecified","employmentVerificationVerifiedAt":null,"bankruptcyStatus":"unspecified","bankruptcyVerifiedAt":null,"sanctionStatus":"unspecified","sanctionVerifiedAt":null,"educationCheckStatus":"unspecified","educationCheckVerifiedAt":null,"educationCheckDocumentStatus":"unspecified","incomeCheckStatus":"unspecified","incomeCheckVerifiedAt":null,"referenceCheckStatus":"unspecified","referenceCheckVerifiedAt":null,"smsNotifyContent":null,"emailNotifyContent":null,"emailNotifySubject":null,"approvalStatus":"inProgress","approvalRemark":null,"position":null,"department":null,"id":"7c7c9e3c-fd6a-4be7-a9f5-449c98cfa23e","createdAt":"2024-04-03T05:30:18.047Z","updatedAt":"2024-04-03T05:30:18.047Z","deletedAt":null}]}],"policies":[],"attachMeetingRoom":true} 
+ </msg>
+<msg time="2024-04-03T12:30:19.742999" level="INFO">${responseCreateCases} = &lt;Response [201]&gt;</msg>
+<var>${responseCreateCases}</var>
+<arg>${baseUrl}/cases</arg>
+<arg>json=${jsonData}</arg>
+<arg>expected_status=${expectedStatus}</arg>
+<arg>headers=${headers}</arg>
+<doc>Sends a POST request.</doc>
+<status status="PASS" start="2024-04-03T12:30:15.974664" elapsed="3.768378"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-04-03T12:30:19.744950" level="INFO">${responseBodyCreateCases} = {"id":"7eedb8fd-bb65-425c-bb5b-3e1644400569","createdAt":"2024-04-03T05:30:16.267Z","updatedAt":"2024-04-03T05:30:17.030Z","deletedAt":null,"userId":"4cce4c33-a81b-4333-b812-524e5835d76f","user":{"id"...</msg>
+<var>${responseBodyCreateCases}</var>
+<arg>${responseCreateCases.text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-04-03T12:30:19.743716" elapsed="0.001268"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-04-03T12:30:19.746228" level="INFO">${responseDictCreateCases} = {'id': '7eedb8fd-bb65-425c-bb5b-3e1644400569', 'createdAt': '2024-04-03T05:30:16.267Z', 'updatedAt': '2024-04-03T05:30:17.030Z', 'deletedAt': None, 'userId': '4cce4c33-a81b-4333-b812-524e5835d76f', 'u...</msg>
+<var>${responseDictCreateCases}</var>
+<arg>json.loads($responseBodyCreateCases)</arg>
+<arg>json</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-04-03T12:30:19.745193" elapsed="0.001069"/>
+</kw>
+<kw name="Return From Keyword" owner="BuiltIn">
+<msg time="2024-04-03T12:30:19.746611" level="INFO">Returning from the enclosing user keyword.</msg>
+<arg>${responseDictCreateCases}</arg>
+<doc>Returns from the enclosing user keyword.</doc>
+<status status="PASS" start="2024-04-03T12:30:19.746490" elapsed="0.000264"/>
+</kw>
+<msg time="2024-04-03T12:30:19.747202" level="INFO">${responseDictCreateCases} = {'id': '7eedb8fd-bb65-425c-bb5b-3e1644400569', 'createdAt': '2024-04-03T05:30:16.267Z', 'updatedAt': '2024-04-03T05:30:17.030Z', 'deletedAt': None, 'userId': '4cce4c33-a81b-4333-b812-524e5835d76f', 'u...</msg>
+<var>${responseDictCreateCases}</var>
+<arg>${accessToken}</arg>
+<arg>${baseUrl}</arg>
+<arg>OneProprietorCaseBySms</arg>
+<arg>201</arg>
+<doc>Post create case for generate proprietors id, case id, and verification id For Patch The EKYC Data
+    Requires
+        - accessToken to authenticate
+        - base url
+        - case type is the file name which is Request body with raw JSON
+        - expected status after post create case
+Validate the create case response
+    Requires
+        - response dict cases (response from post create case)
+        - json schema</doc>
+<status status="PASS" start="2024-04-03T12:30:15.972498" elapsed="3.774732"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2024-04-03T12:30:19.747770" level="INFO">${caseId} = 7eedb8fd-bb65-425c-bb5b-3e1644400569</msg>
+<var>${caseId}</var>
+<arg>${responseDictCreateCases}</arg>
+<arg>id</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2024-04-03T12:30:19.747581" elapsed="0.000215"/>
+</kw>
+<kw name="Patch Expired Case" owner="PatchExpiredCasePage">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-04-03T12:30:19.748865" level="INFO">${headers} = {}</msg>
+<var>${headers}</var>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-04-03T12:30:19.748678" elapsed="0.000209"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-04-03T12:30:19.749144" level="INFO">${data} = {}</msg>
+<var>${data}</var>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-04-03T12:30:19.749026" elapsed="0.000140"/>
+</kw>
+<kw name="Set To Dictionary" owner="Collections">
+<arg>${headers}</arg>
+<arg>Authorization</arg>
+<arg>Bearer ${accessToken}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" start="2024-04-03T12:30:19.749306" elapsed="0.000150"/>
+</kw>
+<kw name="PATCH" owner="RequestsLibrary">
+<msg time="2024-04-03T12:30:19.979126" level="INFO">PATCH Request : url=https://portal-uat.mac-non-prod.appmanteam.com/api/v2/case-keeper/cases/7eedb8fd-bb65-425c-bb5b-3e1644400569/close 
+ path_url=/api/v2/case-keeper/cases/7eedb8fd-bb65-425c-bb5b-3e1644400569/close 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJod214aVRfaDlEQ0RyQ0dJT2lnOU5qU09xb2lpZzFSSFAxUUNubTBSaC1NIn0.eyJleHAiOjE3MTIxMzY2MTYsImlhdCI6MTcxMjEyMjIxNiwianRpIjoiMzJlMzZkMTMtODA3Mi00ZTViLWFkMzctYjg4MzMzNGY0ZDRjIiwiaXNzIjoiaHR0cHM6Ly9wb3J0YWwtdWF0Lm1hYy1ub24tcHJvZC5hcHBtYW50ZWFtLmNvbS9hdXRoL3JlYWxtcy9tYWMtcG9ydGFsIiwiYXVkIjpbIm1hYy1tYW5zaW9uIiwibWFjLW1hbnNpb25fd2ViIl0sInN1YiI6IjRjY2U0YzMzLWE4MWItNDMzMy1iODEyLTUyNGU1ODM1ZDc2ZiIsInR5cCI6IkJlYXJlciIsImF6cCI6Imt0YXhhLWNhc2Uta2VlcGVyLXNlcnZpY2UtYWNjb3VudCIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiYWdlbnQiLCJkZWZhdWx0LXJvbGVzLW1hYy1wb3J0YWwiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsibWFjLW1hbnNpb24iOnsicm9sZXMiOlsiYWdlbnQiXX0sIm1hYy1tYW5zaW9uX3dlYiI6eyJyb2xlcyI6WyJhZ2VudCJdfX0sInNjb3BlIjoiZ3JvdXBzIGFnZW50X2NvZGUgbGljZW5zZV9ubyBwcm9maWxlIHVzZXJfYXR0cmlidXRlIGVtYWlsIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJjbGllbnRIb3N0IjoiMTYxLjgyLjE2MC4xOTQiLCJwcm92aWRlciI6Imt0YXhhLWIyZSIsInByZWZlcnJlZF91c2VybmFtZSI6InNlcnZpY2UtYWNjb3VudC1rdGF4YS1jYXNlLWtlZXBlci1zZXJ2aWNlLWFjY291bnQiLCJjbGllbnRBZGRyZXNzIjoiMTYxLjgyLjE2MC4xOTQiLCJjbGllbnRfaWQiOiJrdGF4YS1jYXNlLWtlZXBlci1zZXJ2aWNlLWFjY291bnQifQ.H5UZoV-DNKQXoYrAwYUDvOg1-A_Jp097WnH62dDhLUwLJ9baTiaQRi1C2gwPvxhvexc9sPcFMWxjaAX50tmKx73MNLKslPXh5q8U3vxwWiSV0XZ92LjiRRMugSdlc0qBj1uBuhx7mifs-EkRmOx7GXRw1VeTbeo2ZkMIw7GUhoN2yRu-a2FE5DoHNaP4cKwuU46sbeC9a0xl29nQjOcpVMnufd93ft7Ns9-bMM-PBPXGO3MX-CtgyJLutmK7OAksp-JAEXnm6BwQ5XfLP2HUfQs2LbsLVHWeiCWXPgsllRXmEngkliogJfBAoG8LPuu7MipI47hkOWxbRDQqIFaoWw', 'Content-Length': '0'} 
+ body=None 
+ </msg>
+<msg time="2024-04-03T12:30:19.979436" level="INFO">PATCH Response : url=https://portal-uat.mac-non-prod.appmanteam.com/api/v2/case-keeper/cases/7eedb8fd-bb65-425c-bb5b-3e1644400569/close 
+ status=204, reason=No Content 
+ headers={'Date': 'Wed, 03 Apr 2024 05:30:20 GMT', 'Connection': 'keep-alive', 'Access-Control-Allow-Credentials': 'true', 'Access-Control-Expose-Headers': 'X-Frame-Options,Strict-Transport-Security,X-Content-Type-Options,X-XSS-Protection', 'Set-Cookie': 'connect.sid=s%3AERmKhSR9spT5Yl04GNkThwnaL0DrEkM6.%2Bm1XgnfRibZhoCjX1%2FqVkrbRMRaO42NmEjTA0Pse57M; Path=/; HttpOnly', 'Strict-Transport-Security': 'max-age=315360000; includeSubDomains; preload', 'Vary': 'Accept-Encoding', 'X-Content-Type-Options': 'nosniff', 'X-Xss-Protection': '1; mode=block'} 
+ body=None 
+ </msg>
+<msg time="2024-04-03T12:30:19.979853" level="INFO">${responseCases} = &lt;Response [204]&gt;</msg>
+<var>${responseCases}</var>
+<arg>${baseUrl}/cases/${caseId}/close</arg>
+<arg>expected_status=${expectedStatus}</arg>
+<arg>headers=${headers}</arg>
+<doc>Sends a PUT request.</doc>
+<status status="PASS" start="2024-04-03T12:30:19.749608" elapsed="0.230314"/>
+</kw>
+<arg>${accessToken}</arg>
+<arg>${baseUrl}</arg>
+<arg>${caseId}</arg>
+<arg>204</arg>
+<doc>Patch close case by case id to make the link expire
+Requires
+- accessToken to authenticate
+- base url
+- case id from create case response
+- expected status after patch close the case (make the case expire)</doc>
+<status status="PASS" start="2024-04-03T12:30:19.748143" elapsed="0.232184"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-04-03T12:30:24.983721" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-04-03T12:30:19.981014" elapsed="5.003134"/>
+</kw>
+<kw name="Get Case By Id" owner="GetCaseByIdPage">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-04-03T12:30:24.987000" level="INFO">${headers} = {}</msg>
+<var>${headers}</var>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-04-03T12:30:24.986684" elapsed="0.000546"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-04-03T12:30:24.987589" level="INFO">${data} = {}</msg>
+<var>${data}</var>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-04-03T12:30:24.987440" elapsed="0.000175"/>
+</kw>
+<kw name="Set To Dictionary" owner="Collections">
+<arg>${headers}</arg>
+<arg>Authorization</arg>
+<arg>Bearer ${accessToken}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" start="2024-04-03T12:30:24.987789" elapsed="0.000211"/>
+</kw>
+<kw name="GET" owner="RequestsLibrary">
+<msg time="2024-04-03T12:30:25.195626" level="INFO">GET Request : url=https://portal-uat.mac-non-prod.appmanteam.com/api/v2/case-keeper/cases/7eedb8fd-bb65-425c-bb5b-3e1644400569 
+ path_url=/api/v2/case-keeper/cases/7eedb8fd-bb65-425c-bb5b-3e1644400569 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJod214aVRfaDlEQ0RyQ0dJT2lnOU5qU09xb2lpZzFSSFAxUUNubTBSaC1NIn0.eyJleHAiOjE3MTIxMzY2MTYsImlhdCI6MTcxMjEyMjIxNiwianRpIjoiMzJlMzZkMTMtODA3Mi00ZTViLWFkMzctYjg4MzMzNGY0ZDRjIiwiaXNzIjoiaHR0cHM6Ly9wb3J0YWwtdWF0Lm1hYy1ub24tcHJvZC5hcHBtYW50ZWFtLmNvbS9hdXRoL3JlYWxtcy9tYWMtcG9ydGFsIiwiYXVkIjpbIm1hYy1tYW5zaW9uIiwibWFjLW1hbnNpb25fd2ViIl0sInN1YiI6IjRjY2U0YzMzLWE4MWItNDMzMy1iODEyLTUyNGU1ODM1ZDc2ZiIsInR5cCI6IkJlYXJlciIsImF6cCI6Imt0YXhhLWNhc2Uta2VlcGVyLXNlcnZpY2UtYWNjb3VudCIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiYWdlbnQiLCJkZWZhdWx0LXJvbGVzLW1hYy1wb3J0YWwiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsibWFjLW1hbnNpb24iOnsicm9sZXMiOlsiYWdlbnQiXX0sIm1hYy1tYW5zaW9uX3dlYiI6eyJyb2xlcyI6WyJhZ2VudCJdfX0sInNjb3BlIjoiZ3JvdXBzIGFnZW50X2NvZGUgbGljZW5zZV9ubyBwcm9maWxlIHVzZXJfYXR0cmlidXRlIGVtYWlsIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJjbGllbnRIb3N0IjoiMTYxLjgyLjE2MC4xOTQiLCJwcm92aWRlciI6Imt0YXhhLWIyZSIsInByZWZlcnJlZF91c2VybmFtZSI6InNlcnZpY2UtYWNjb3VudC1rdGF4YS1jYXNlLWtlZXBlci1zZXJ2aWNlLWFjY291bnQiLCJjbGllbnRBZGRyZXNzIjoiMTYxLjgyLjE2MC4xOTQiLCJjbGllbnRfaWQiOiJrdGF4YS1jYXNlLWtlZXBlci1zZXJ2aWNlLWFjY291bnQifQ.H5UZoV-DNKQXoYrAwYUDvOg1-A_Jp097WnH62dDhLUwLJ9baTiaQRi1C2gwPvxhvexc9sPcFMWxjaAX50tmKx73MNLKslPXh5q8U3vxwWiSV0XZ92LjiRRMugSdlc0qBj1uBuhx7mifs-EkRmOx7GXRw1VeTbeo2ZkMIw7GUhoN2yRu-a2FE5DoHNaP4cKwuU46sbeC9a0xl29nQjOcpVMnufd93ft7Ns9-bMM-PBPXGO3MX-CtgyJLutmK7OAksp-JAEXnm6BwQ5XfLP2HUfQs2LbsLVHWeiCWXPgsllRXmEngkliogJfBAoG8LPuu7MipI47hkOWxbRDQqIFaoWw'} 
+ body=None 
+ </msg>
+<msg time="2024-04-03T12:30:25.195701" level="INFO">GET Response : url=https://portal-uat.mac-non-prod.appmanteam.com/api/v2/case-keeper/cases/7eedb8fd-bb65-425c-bb5b-3e1644400569 
+ status=200, reason=OK 
+ headers={'Date': 'Wed, 03 Apr 2024 05:30:25 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '1388', 'Connection': 'keep-alive', 'Access-Control-Allow-Credentials': 'true', 'Access-Control-Expose-Headers': 'X-Frame-Options,Strict-Transport-Security,X-Content-Type-Options,X-XSS-Protection', 'Content-Encoding': 'gzip', 'Etag': 'W/"131c-kYTn4cD6SOf3nGg6ajA8NfiFciE"', 'Set-Cookie': 'connect.sid=s%3AEAP0flL7yrTV02Pbv-b4xSjbqZ_4l20J.QniIJkqtgIJiRm%2Fz%2B1uS%2F%2FygJB5CehUvx3Q7PL9blkQ; Path=/; HttpOnly', 'Strict-Transport-Security': 'max-age=315360000; includeSubDomains; preload', 'Vary': 'Accept-Encoding', 'X-Content-Type-Options': 'nosniff', 'X-Xss-Protection': '1; mode=block'} 
+ body={"id":"7eedb8fd-bb65-425c-bb5b-3e1644400569","createdAt":"2024-04-03T05:30:16.267Z","updatedAt":"2024-04-03T05:30:20.105Z","deletedAt":null,"userId":"4cce4c33-a81b-4333-b812-524e5835d76f","status":"closed","caseStatus":"closed","remark":null,"appNumber":null,"department":null,"meetingRoomId":"08f0-4e4c-98aa","caseType":{"key":"default","code":"001","translations":{"en":{"label":"Remote Selling"},"th":{"label":"Remote Selling"}}},"voiceScripts":null,"proprietors":[{"id":"6db3296a-e15b-47bf-90ce-ba9800a4fd7e","createdAt":"2024-04-03T05:30:17.525Z","updatedAt":"2024-04-03T05:30:19.144Z","deletedAt":null,"userId":"4cce4c33-a81b-4333-b812-524e5835d76f","caseId":"7eedb8fd-bb65-425c-bb5b-3e1644400569","guardianId":null,"proprietorType":"insured","inviteType":"sms","countryCode":"TH","citizenId":"1729900599685","passportNumber":null,"title":{"key":"005","sex":"M","code":"005","label":"Mr.","value":"005","translations":{"en":{"label":"Mr."},"th":{"label":"นาย"}}},"firstName":"กรรณชัย","middleName":null,"lastName":"อ่างแก้ว","dateOfBirth":"2002-12-09","phoneNumber":"0619926554","email":null,"verificationRef":"7c7c9e3c-fd6a-4be7-a9f5-449c98cfa23e","verificationCache":{"id":"7c7c9e3c-fd6a-4be7-a9f5-449c98cfa23e","ref":null,"meta":{"proprietor":{"case":{"id":"7eedb8fd-bb65-425c-bb5b-3e1644400569","caseType":{"key":"default","code":"001","translations":{"en":{"label":"Remote Selling"},"th":{"label":"Remote Selling"}}},"policies":[]},"lastName":"อ่างแก้ว","firstName":"กรรณชัย"},"insuredTitle":{"key":"005","sex":"M","code":"005","label":"Mr.","value":"005","translations":{"en":{"label":"Mr."},"id":{"label":"Tuan"},"th":{"label":"นาย"}}},"insuredLastName":"อ่างแก้ว","insuredFirstName":"กรรณชัย","insuredMiddleName":null},"email":null,"status":"open","userId":"4cce4c33-a81b-4333-b812-524e5835d76f","feedback":null,"lastName":"อ่างแก้ว","position":null,"citizenId":"1729900599685","createdAt":"2024-04-03T05:30:18.047Z","deletedAt":null,"expiresAt":"2024-05-03T05:30:17.989Z","firstName":"กรรณชัย","kycStatus":"open","laserCode":null,"updatedAt":"2024-04-03T05:30:18.047Z","amloConfig":{"required":false},"amloResult":null,"department":null,"dopaConfig":{"required":false},"dopaResult":null,"middleName":null,"notifyType":"none","verifiedAt":null,"amloResults":null,"appointment":null,"dateOfBirth":"2002-12-09","dopaResults":null,"phoneNumber":"0619926554","dipChipConfig":{"required":false},"dipChipResult":null,"dipChipStatus":"unspecified","kycVerifiedAt":null,"pdpaConsented":false,"reusedResults":null,"approvalRemark":null,"approvalStatus":"inProgress","dipChipResults":null,"passportConfig":{"required":false},"passportNumber":null,"passportResult":null,"sanctionConfig":{"required":false},"sanctionResult":null,"sanctionStatus":"unspecified","verificationId":null,"passportResults":null,"sanctionResults":null,"backIdCardConfig":{"attempts":3,"required":true,"isEditable":true,"threshHold":0.8,"currentAttempt":3,"dependenciesRequired":false},"backIdCardResult":null,"bankruptcyConfig":{"required":false},"bankruptcyResult":null,"bankruptcyStatus":"unspecified","smsNotifyContent":null,"backIdCardResults":null,"bankruptcyResults":null,"dipChipVerifiedAt":null,"frontIdCardConfig":{"attempts":3,"required":true,"isEditable":true,"threshHold":0.8,"validations":[],"currentAttempt":3,"dependenciesRequired":false,"compareNonEssentialFields":false},"frontIdCardResult":null,"incomeCheckConfig":{"required":false},"incomeCheckResult":null,"incomeCheckStatus":"unspecified","emailNotifyContent":null,"emailNotifySubject":null,"frontIdCardResults":null,"incomeCheckResults":null,"sanctionVerifiedAt":null,"criminalCheckConfig":{"required":false},"criminalCheckResult":null,"criminalCheckStatus":"unspecified","bankruptcyVerifiedAt":null,"criminalCheckResults":null,"educationCheckConfig":{"required":false},"educationCheckResult":null,"educationCheckStatus":"unspecified","referenceCheckConfig":{"required":false},"referenceCheckResult":null,"referenceCheckStatus":"unspecified","educationCheckResults":null,"incomeCheckVerifiedAt":null,"referenceCheckResults":null,"criminalCheckVerifiedAt":null,"idFaceRecognitionConfig":{"attempts":1,"required":true,"threshHold":0.8,"currentAttempt":1,"livenessProvider":"facetecXAWS","dependenciesRequired":false},"idFaceRecognitionResult":null,"educationCheckVerifiedAt":null,"idFaceRecognitionResults":null,"referenceCheckVerifiedAt":null,"educationCheckDocumentStatus":"unspecified","employmentVerificationConfig":{"required":false},"employmentVerificationResult":null,"employmentVerificationStatus":"unspecified","employmentVerificationResults":null,"employmentVerificationVerifiedAt":null},"certificationNumber":null,"memberNumber":null,"expiresAt":null,"verifiedAt":null}],"policies":[],"documents":[]} 
+ </msg>
+<msg time="2024-04-03T12:30:25.196933" level="INFO">${responseCase} = &lt;Response [200]&gt;</msg>
+<var>${responseCase}</var>
+<arg>${baseUrl}/cases/${caseId}</arg>
+<arg>expected_status=${expectedStatus}</arg>
+<arg>headers=${headers}</arg>
+<doc>Sends a GET request.</doc>
+<status status="PASS" start="2024-04-03T12:30:24.988175" elapsed="0.208788"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-04-03T12:30:25.197462" level="INFO">${responseBodyCase} = {"id":"7eedb8fd-bb65-425c-bb5b-3e1644400569","createdAt":"2024-04-03T05:30:16.267Z","updatedAt":"2024-04-03T05:30:20.105Z","deletedAt":null,"userId":"4cce4c33-a81b-4333-b812-524e5835d76f","status":"cl...</msg>
+<var>${responseBodyCase}</var>
+<arg>${responseCase.text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-04-03T12:30:25.197116" elapsed="0.000361"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-04-03T12:30:25.197839" level="INFO">${responseDictCase} = {'id': '7eedb8fd-bb65-425c-bb5b-3e1644400569', 'createdAt': '2024-04-03T05:30:16.267Z', 'updatedAt': '2024-04-03T05:30:20.105Z', 'deletedAt': None, 'userId': '4cce4c33-a81b-4333-b812-524e5835d76f', 's...</msg>
+<var>${responseDictCase}</var>
+<arg>json.loads($responseBodyCase)</arg>
+<arg>json</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-04-03T12:30:25.197565" elapsed="0.000288"/>
+</kw>
+<kw name="Return From Keyword" owner="BuiltIn">
+<msg time="2024-04-03T12:30:25.197976" level="INFO">Returning from the enclosing user keyword.</msg>
+<arg>${responseDictCase}</arg>
+<doc>Returns from the enclosing user keyword.</doc>
+<status status="PASS" start="2024-04-03T12:30:25.197938" elapsed="0.000073"/>
+</kw>
+<msg time="2024-04-03T12:30:25.198126" level="INFO">${responseDictCases} = {'id': '7eedb8fd-bb65-425c-bb5b-3e1644400569', 'createdAt': '2024-04-03T05:30:16.267Z', 'updatedAt': '2024-04-03T05:30:20.105Z', 'deletedAt': None, 'userId': '4cce4c33-a81b-4333-b812-524e5835d76f', 's...</msg>
+<var>${responseDictCases}</var>
+<arg>${accessToken}</arg>
+<arg>${baseUrl}</arg>
+<arg>${caseId}</arg>
+<arg>200</arg>
+<doc>Get case by id from the api for geting the case detail
+    Requires
+        - accessToken to authenticated
+        - base url
+        - case id which get from create case api
+        - expected status after get case detail by case id
+Validate the case detail response
+     Requires
+        - response dict cases (response from get case by id)
+        - json schema</doc>
+<status status="PASS" start="2024-04-03T12:30:24.985417" elapsed="0.212720"/>
+</kw>
+<kw name="Validate Case Detail Response" owner="GetCaseByIdPage">
+<kw name="Validate Json Schema" owner="validate">
+<arg>${responseDictCase}</arg>
+<arg>${EXECDIR}/Schema/CaseResponse/${jsonSchema}.json</arg>
+<status status="PASS" start="2024-04-03T12:30:25.198494" elapsed="0.002657"/>
+</kw>
+<arg>${responseDictCases}</arg>
+<arg>CaseResponsAfterExpireCaseTS004</arg>
+<status status="PASS" start="2024-04-03T12:30:25.198336" elapsed="0.002857"/>
+</kw>
+<kw name="Patch Expired Case" owner="PatchExpiredCasePage">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-04-03T12:30:25.201572" level="INFO">${headers} = {}</msg>
+<var>${headers}</var>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-04-03T12:30:25.201502" elapsed="0.000081"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-04-03T12:30:25.201708" level="INFO">${data} = {}</msg>
+<var>${data}</var>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-04-03T12:30:25.201650" elapsed="0.000067"/>
+</kw>
+<kw name="Set To Dictionary" owner="Collections">
+<arg>${headers}</arg>
+<arg>Authorization</arg>
+<arg>Bearer ${accessToken}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" start="2024-04-03T12:30:25.201778" elapsed="0.000065"/>
+</kw>
+<kw name="PATCH" owner="RequestsLibrary">
+<msg time="2024-04-03T12:30:25.366355" level="INFO">PATCH Request : url=https://portal-uat.mac-non-prod.appmanteam.com/api/v2/case-keeper/cases/7eedb8fd-bb65-425c-bb5b-3e1644400569/close 
+ path_url=/api/v2/case-keeper/cases/7eedb8fd-bb65-425c-bb5b-3e1644400569/close 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJod214aVRfaDlEQ0RyQ0dJT2lnOU5qU09xb2lpZzFSSFAxUUNubTBSaC1NIn0.eyJleHAiOjE3MTIxMzY2MTYsImlhdCI6MTcxMjEyMjIxNiwianRpIjoiMzJlMzZkMTMtODA3Mi00ZTViLWFkMzctYjg4MzMzNGY0ZDRjIiwiaXNzIjoiaHR0cHM6Ly9wb3J0YWwtdWF0Lm1hYy1ub24tcHJvZC5hcHBtYW50ZWFtLmNvbS9hdXRoL3JlYWxtcy9tYWMtcG9ydGFsIiwiYXVkIjpbIm1hYy1tYW5zaW9uIiwibWFjLW1hbnNpb25fd2ViIl0sInN1YiI6IjRjY2U0YzMzLWE4MWItNDMzMy1iODEyLTUyNGU1ODM1ZDc2ZiIsInR5cCI6IkJlYXJlciIsImF6cCI6Imt0YXhhLWNhc2Uta2VlcGVyLXNlcnZpY2UtYWNjb3VudCIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiYWdlbnQiLCJkZWZhdWx0LXJvbGVzLW1hYy1wb3J0YWwiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsibWFjLW1hbnNpb24iOnsicm9sZXMiOlsiYWdlbnQiXX0sIm1hYy1tYW5zaW9uX3dlYiI6eyJyb2xlcyI6WyJhZ2VudCJdfX0sInNjb3BlIjoiZ3JvdXBzIGFnZW50X2NvZGUgbGljZW5zZV9ubyBwcm9maWxlIHVzZXJfYXR0cmlidXRlIGVtYWlsIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJjbGllbnRIb3N0IjoiMTYxLjgyLjE2MC4xOTQiLCJwcm92aWRlciI6Imt0YXhhLWIyZSIsInByZWZlcnJlZF91c2VybmFtZSI6InNlcnZpY2UtYWNjb3VudC1rdGF4YS1jYXNlLWtlZXBlci1zZXJ2aWNlLWFjY291bnQiLCJjbGllbnRBZGRyZXNzIjoiMTYxLjgyLjE2MC4xOTQiLCJjbGllbnRfaWQiOiJrdGF4YS1jYXNlLWtlZXBlci1zZXJ2aWNlLWFjY291bnQifQ.H5UZoV-DNKQXoYrAwYUDvOg1-A_Jp097WnH62dDhLUwLJ9baTiaQRi1C2gwPvxhvexc9sPcFMWxjaAX50tmKx73MNLKslPXh5q8U3vxwWiSV0XZ92LjiRRMugSdlc0qBj1uBuhx7mifs-EkRmOx7GXRw1VeTbeo2ZkMIw7GUhoN2yRu-a2FE5DoHNaP4cKwuU46sbeC9a0xl29nQjOcpVMnufd93ft7Ns9-bMM-PBPXGO3MX-CtgyJLutmK7OAksp-JAEXnm6BwQ5XfLP2HUfQs2LbsLVHWeiCWXPgsllRXmEngkliogJfBAoG8LPuu7MipI47hkOWxbRDQqIFaoWw', 'Content-Length': '0'} 
+ body=None 
+ </msg>
+<msg time="2024-04-03T12:30:25.366497" level="INFO">PATCH Response : url=https://portal-uat.mac-non-prod.appmanteam.com/api/v2/case-keeper/cases/7eedb8fd-bb65-425c-bb5b-3e1644400569/close 
+ status=404, reason=Not Found 
+ headers={'Date': 'Wed, 03 Apr 2024 05:30:25 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '74', 'Connection': 'keep-alive', 'Access-Control-Allow-Credentials': 'true', 'Access-Control-Expose-Headers': 'X-Frame-Options,Strict-Transport-Security,X-Content-Type-Options,X-XSS-Protection', 'Etag': 'W/"4a-rzY3Z4muyg+jSqGFBMFYXhBnaEw"', 'Set-Cookie': 'connect.sid=s%3AeI63au2BndLDMlNoXc0wlIj5r40gYtzk.Ok3B4RiO2yAF31aQNf2LeDSbx9%2F7pCtvd3Ce1kyaq0Y; Path=/; HttpOnly', 'Strict-Transport-Security': 'max-age=315360000; includeSubDomains; preload', 'Vary': 'Accept-Encoding', 'X-Content-Type-Options': 'nosniff', 'X-Xss-Protection': '1; mode=block'} 
+ body={"errors":[{"msg":"Entity could not be found.","code":"enitityNotFound"}]} 
+ </msg>
+<msg time="2024-04-03T12:30:25.366642" level="INFO">${responseCases} = &lt;Response [404]&gt;</msg>
+<var>${responseCases}</var>
+<arg>${baseUrl}/cases/${caseId}/close</arg>
+<arg>expected_status=${expectedStatus}</arg>
+<arg>headers=${headers}</arg>
+<doc>Sends a PUT request.</doc>
+<status status="PASS" start="2024-04-03T12:30:25.201908" elapsed="0.164761"/>
+</kw>
+<arg>${accessToken}</arg>
+<arg>${baseUrl}</arg>
+<arg>${caseId}</arg>
+<arg>404</arg>
+<doc>Patch close case by case id to make the link expire
+Requires
+- accessToken to authenticate
+- base url
+- case id from create case response
+- expected status after patch close the case (make the case expire)</doc>
+<status status="PASS" start="2024-04-03T12:30:25.201315" elapsed="0.165469"/>
+</kw>
+<status status="PASS" start="2024-04-03T12:30:15.807017" elapsed="9.559968"/>
+</test>
+<status status="PASS" start="2024-04-03T12:30:15.639099" elapsed="9.728374"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="TS04">TS04</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

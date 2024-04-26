@@ -1,0 +1,471 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "verifications": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "type": "string",
+                        "const": "completed"
+                    },
+                    "frontIdCardConfig": {
+                        "$ref": "#/definitions/idCardConfig"
+                    },
+                    "backIdCardConfig": {
+                        "$ref": "#/definitions/idCardConfig"
+                    },
+                    "idFaceRecognitionConfig": {
+                        "$ref": "#/definitions/idFaceRecognitionConfig"
+                    },
+                    "citizenId": {
+                        "type": "string",
+                        "const": "1239900336573"
+                    },
+                    "passportNumber": {
+                        "type": [
+                            "string",
+                            "null"
+                        ],
+                        "const": null
+                    },
+                    "laserCode": {
+                        "type": [
+                            "string",
+                            "null"
+                        ],
+                        "const": null
+                    },
+                    "firstName": {
+                        "type": "string",
+                        "const": "อมรรัตน์"
+                    },
+                    "middleName": {
+                        "type": [
+                            "string",
+                            "null"
+                        ],
+                        "const": null
+                    },
+                    "lastName": {
+                        "type": "string",
+                        "const": "ดิษเจริญ"
+                    },
+                    "dateOfBirth": {
+                        "type": "string",
+                        "format": "date",
+                        "const": "2001-05-21"
+                    },
+                    "email": {
+                        "type": [
+                            "string",
+                            "null"
+                        ],
+                        "format": "email",
+                        "const": null
+                    },
+                    "phoneNumber": {
+                        "type": [
+                            "string",
+                            "null"
+                        ],
+                        "const": null
+                    },
+                    "frontIdCardResult": {
+                        "type": "object",
+                        "properties": {
+                            "response": {
+                                "type": "object",
+                                "properties": {
+                                    "result": {
+                                        "type": "object",
+                                        "properties": {
+                                            "name_en": {
+                                                "type": "string",
+                                                "const": "Miss Amonrat"
+                                            },
+                                            "district": {
+                                                "type": "string",
+                                                "const": "อ.บ่อไร่"
+                                            },
+                                            "province": {
+                                                "type": "string",
+                                                "const": "จ.ตราด"
+                                            },
+                                            "title_en": {
+                                                "type": "string",
+                                                "const": "Miss"
+                                            },
+                                            "title_th": {
+                                                "type": "string",
+                                                "const": "น.ส."
+                                            },
+                                            "id_number": {
+                                                "type": "string",
+                                                "const": "1 2399 00336 57 3"
+                                            },
+                                            "address_no": {
+                                                "type": "string",
+                                                "const": "58 หมู่ที่ 2"
+                                            },
+                                            "address_th": {
+                                                "type": "string",
+                                                "const": "58 หมู่ที่ 2 ต.นนทรีย์ อ.บ่อไร่ จ.ตราด"
+                                            },
+                                            "religion_th": {
+                                                "type": "string",
+                                                "const": "พุทธ"
+                                            },
+                                            "full_name_th": {
+                                                "type": "string",
+                                                "const": "น.ส. อมรรัตน์ ดิษเจริญ"
+                                            },
+                                            "last_name_en": {
+                                                "type": "string",
+                                                "const": "Discharoen"
+                                            },
+                                            "last_name_th": {
+                                                "type": "string",
+                                                "const": "ดิษเจริญ"
+                                            },
+                                            "sub_district": {
+                                                "type": "string",
+                                                "const": "ต.นนทรีย์"
+                                            },
+                                            "first_name_en": {
+                                                "type": "string",
+                                                "const": "Amonrat"
+                                            },
+                                            "first_name_th": {
+                                                "type": "string",
+                                                "const": "อมรรัตน์"
+                                            },
+                                            "serial_number": {
+                                                "type": "string",
+                                                "const": "2304-02-05090924"
+                                            },
+                                            "middle_name_en": {
+                                                "type": "string",
+                                                "const": ""
+                                            },
+                                            "middle_name_th": {
+                                                "type": "string",
+                                                "const": ""
+                                            },
+                                            "date_of_birth_en": {
+                                                "type": "string",
+                                                "const": "21 May 2001"
+                                            },
+                                            "date_of_birth_th": {
+                                                "type": "string",
+                                                "const": "21 พ.ค. 2544"
+                                            },
+                                            "date_of_issue_en": {
+                                                "type": "string",
+                                                "const": "9 May 2017"
+                                            },
+                                            "date_of_issue_th": {
+                                                "type": "string",
+                                                "const": "9 พ.ค. 2560"
+                                            },
+                                            "date_of_expiry_en": {
+                                                "type": "string",
+                                                "const": "20 May 2025"
+                                            },
+                                            "date_of_expiry_th": {
+                                                "type": "string",
+                                                "const": "20 พ.ค. 2568"
+                                            },
+                                            "middle_last_name_en": {
+                                                "type": "string",
+                                                "const": "Discharoen"
+                                            },
+                                            "title_first_name_en": {
+                                                "type": "string",
+                                                "const": "Miss Amonrat"
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "verified": {
+                                "type": "boolean",
+                                "const": true
+                            },
+                            "confirmed": {
+                                "type": "boolean",
+                                "const": true
+                            }
+                        }
+                    },
+                    "passportResult": {
+                        "type": [
+                            "object",
+                            "null"
+                        ],
+                        "const": null
+                    },
+                    "passportResults": {
+                        "type": "array",
+                        "const": []
+                    },
+                    "backIdCardResult": {
+                        "type": "object",
+                        "properties": {
+                            "response": {
+                                "type": "object",
+                                "properties": {
+                                    "result": {
+                                        "type": "object",
+                                        "properties": {
+                                            "laser_code": {
+                                                "type": "string",
+                                                "const": "ME3-1490872-87"
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "verified": {
+                                "type": "boolean",
+                                "const": true
+                            },
+                            "confirmed": {
+                                "type": "boolean",
+                                "const": true
+                            }
+                        }
+                    },
+                    "idFaceRecognitionResult": {
+                        "type": "object",
+                        "properties": {
+                            "verified": {
+                                "type": "boolean",
+                                "const": false
+                            },
+                            "confirmed": {
+                                "type": "boolean",
+                                "const": true
+                            }
+                        }
+                    },
+                    "feedback": {
+                        "type": "string",
+                        "const": "ทำศัยกรรม"
+                    },
+                    "meta": {
+                        "type": "object",
+                        "properties": {
+                            "insuredLastName": {
+                                "type": "string",
+                                "const": "อ่างแก้ว"
+                            },
+                            "insuredFirstName": {
+                                "type": "string",
+                                "const": "กรรณชัย"
+                            },
+                            "insuredMiddleName": {
+                                "type": [
+                                    "string",
+                                    "null"
+                                ],
+                                "const": null
+                            }
+                        }
+                    },
+                    "kycStatus": {
+                        "type": "string",
+                        "const": "completed"
+                    }
+                },
+                "required": [
+                    "status",
+                    "frontIdCardConfig",
+                    "passportConfig",
+                    "backIdCardConfig",
+                    "idFaceRecognitionConfig",
+                    "citizenId",
+                    "firstName",
+                    "lastName",
+                    "dateOfBirth",
+                    "frontIdCardResult",
+                    "kycStatus"
+                ]
+            }
+        },
+        "case": {
+            "type": "object",
+            "properties": {
+                "status": {
+                    "type": "string",
+                    "const": "inProgress"
+                },
+                "caseStatus": {
+                    "type": "string",
+                    "const": "inProgress"
+                }
+            },
+            "required": [
+                "status",
+                "caseStatus"
+            ]
+        },
+        "proprietorType": {
+            "type": "string",
+            "const": "payer"
+        },
+        "inviteType": {
+            "type": "string",
+            "const": "none"
+        },
+        "citizenId": {
+            "type": "string",
+            "const": "1239900336573"
+        },
+        "firstName": {
+            "type": "string",
+            "const": "อมรรัตน์"
+        },
+        "middleName": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "const": null
+        },
+        "lastName": {
+            "type": "string",
+            "const": "ดิษเจริญ"
+        },
+        "dateOfBirth": {
+            "type": "string",
+            "format": "date",
+            "const": "2001-05-21"
+        },
+        "phoneNumber": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "const": null
+        },
+        "email": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "format": "email",
+            "const": null
+        },
+        "verificationRef": {
+            "type": "string"
+        },
+        "verificationCache": {
+            "type": "object",
+            "properties": {
+                "meta": {
+                    "type": "object",
+                    "properties": {
+                        "insuredLastName": {
+                            "type": "string",
+                            "const": "อ่างแก้ว"
+                        },
+                        "insuredFirstName": {
+                            "type": "string",
+                            "const": "กรรณชัย"
+                        },
+                        "insuredMiddleName": {
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "const": null
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "required": [
+        "id",
+        "createdAt",
+        "updatedAt",
+        "userId",
+        "verifications",
+        "case",
+        "proprietorType",
+        "inviteType",
+        "citizenId",
+        "firstName",
+        "lastName",
+        "dateOfBirth",
+        "verificationRef",
+        "verificationCache"
+    ],
+    "definitions": {
+        "idCardConfig": {
+            "type": "object",
+            "properties": {
+                "required": {
+                    "type": "boolean",
+                    "const": true
+                },
+                "isEditable": {
+                    "type": "boolean",
+                    "const": true
+                },
+                "dependenciesRequired": {
+                    "type": "boolean",
+                    "const": false
+                },
+                "threshHold": {
+                    "type": "number",
+                    "threshHold": 0.8
+                },
+                "attempts": {
+                    "type": "integer",
+                    "const": 3
+                }
+            },
+            "required": [
+                "required",
+                "isEditable",
+                "dependenciesRequired",
+                "attempts"
+            ]
+        },
+        "idFaceRecognitionConfig": {
+            "type": "object",
+            "properties": {
+                "required": {
+                    "type": "boolean",
+                    "const": true
+                },
+                "dependenciesRequired": {
+                    "type": "boolean",
+                    "const": false
+                },
+                "threshHold": {
+                    "type": "number",
+                    "const": 0.8
+                },
+                "attempts": {
+                    "type": "integer",
+                    "const": 1
+                },
+                "livenessProvider": {
+                    "type": "string",
+                    "const": "facetecXAWS"
+                }
+            },
+            "required": [
+                "required",
+                "dependenciesRequired",
+                "attempts",
+                "livenessProvider"
+            ]
+        }
+    }
+}

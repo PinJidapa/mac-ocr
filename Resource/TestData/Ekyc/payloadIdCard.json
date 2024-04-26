@@ -1,0 +1,124 @@
+{
+    "caseType": {
+        "key": "thaiIdCard",
+        "code": "003",
+        "translations": {
+            "en": {
+                "label": "Thai ID Card"
+            },
+            "th": {
+                "label": "บัตรประชาชน"
+            },
+            "id": {
+                "label": "Thai ID Card"
+            }
+        }
+    },
+    "policies": [
+        {
+            "policyNumber": null
+        }
+    ],
+    "proprietors": [
+        {
+            "expiryDuration": "P5D",
+            "notifyDuration": "P3D",
+            "proprietorType": "insured",
+            "citizenId": "2-1003-00026-833",
+            "firstName": "ศุภธัช",
+            "middleName": null,
+            "lastName": "ทองกล่ำ",
+            "title": {
+                "key": "005",
+                "code": "005",
+                "sex": "M",
+                "translations": {
+                    "en": {
+                        "label": "Mr."
+                    },
+                    "th": {
+                        "label": "นาย"
+                    },
+                    "id": {
+                        "label": "Tuan"
+                    }
+                },
+                "value": "005",
+                "label": "Mr."
+            },
+            "dateOfBirth": "1999-02-19",
+            "notifyType": "sms",
+            "phoneNumber": "0959309381",
+            "meta": {
+                "insuredTitle": {
+                    "key": "005",
+                    "code": "005",
+                    "sex": "M",
+                    "translations": {
+                        "en": {
+                            "label": "Mr."
+                        },
+                        "th": {
+                            "label": "นาย"
+                        },
+                        "id": {
+                            "label": "Tuan"
+                        }
+                    },
+                    "value": "005",
+                    "label": "Mr."
+                },
+                "insuredFirstName": "ศุภธัช",
+                "insuredMiddleName": null,
+                "insuredLastName": "ทองกล่ำ"
+            },
+            "verifications": [
+                {
+                    "smsNotifyContent": "เรียนคุณ ${firstName} ${lastName} กรุณายืนยันตัวตนด้วยบัตรประชาชนผ่านลิงก์ ${application.verificationBasePath}/${id}",
+                    "emailNotifyContent": "เรียนคุณ ${firstName} ${lastName} กรุณายืนยันตัวตนด้วยบัตรประชาชนผ่านลิงก์ ${application.verificationBasePath}/${id}",
+                    "emailNotifySubject": "แจ้งการยืนยันตัวตน",
+                    "frontIdCardConfig": {
+                        "required": true,
+                        "isEditable": true,
+                        "dependenciesRequired": false,
+                        "threshHold": 0.8,
+                        "attempts": 3,
+                        "validations": ["comparison"]
+                    },
+                    "backIdCardConfig": {
+                        "required": true,
+                        "isEditable": true,
+                        "dependenciesRequired": false,
+                        "threshHold": 1,
+                        "attempts": 3
+                    },
+                    "dopaConfig": {
+                        "required": true,
+                        "isEditable": true,
+                        "dependenciesRequired": false,
+                        "attempts": 3
+                    },
+                    "livenessConfig": {
+                        "attempts": 1,
+                        "required": true,
+                        "threshold": 0.1,
+                        "livenessCount": 1,
+                        "currentAttempt": 1,
+                        "endFlowOnFailure": true,
+                        "livenessProvider": "facetec"
+                      },
+                      "faceRecognitionConfig": {
+                        "attempts": 1,
+                        "required": true,
+                        "threshold": 0.8,
+                        "endFlowOnFailure": true,
+                        "faceRecognitionSource": "frontIdCard",
+                        "faceRecognitionTarget": "liveness",
+                        "faceRecognitionProvider": "facetec"                   }
+                }
+            ]
+        }
+    ],
+    "remark": null,
+    "attachMeetingRoom": false
+}

@@ -1,0 +1,384 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "verifications": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "type": "string",
+                        "const": "completed"
+                    },
+                    "frontIdCardConfig": {
+                        "$ref": "#/definitions/idCardConfig"
+                    },
+                    "backIdCardConfig": {
+                        "$ref": "#/definitions/idCardConfig"
+                    },
+                    "idFaceRecognitionConfig": {
+                        "$ref": "#/definitions/idFaceRecognitionConfig"
+                    },
+                    "citizenId": {
+                        "type": "string",
+                        "const": "1729900599685"
+                    },
+                    "firstName": {
+                        "type": "string",
+                        "const": "กรรณชัย"
+                    },
+                    "lastName": {
+                        "type": "string",
+                        "const": "อ่างแก้ว"
+                    },
+                    "dateOfBirth": {
+                        "type": "string",
+                        "format": "date",
+                        "const": "2002-12-09"
+                    },
+                    "email": {
+                        "type": "string",
+                        "format": "email",
+                        "const": "jidapa.o@appman.co.th"
+                    },
+                    "frontIdCardResult": {
+                        "type": "object",
+                        "properties": {
+                            "response": {
+                                "type": "object",
+                                "properties": {
+                                    "result": {
+                                        "type": "object",
+                                        "properties": {
+                                            "name_en": {
+                                                "type": "string",
+                                                "const": "Mr. Kanchai"
+                                            },
+                                            "district": {
+                                                "type": "string",
+                                                "const": "อ.สามพราน"
+                                            },
+                                            "province": {
+                                                "type": "string",
+                                                "const": "จ.นครปฐม"
+                                            },
+                                            "title_en": {
+                                                "type": "string",
+                                                "const": "Mr."
+                                            },
+                                            "title_th": {
+                                                "type": "string",
+                                                "const": "นาย"
+                                            },
+                                            "id_number": {
+                                                "type": "string",
+                                                "const": "1 7299 00599 68 5"
+                                            },
+                                            "address_no": {
+                                                "type": "string",
+                                                "const": "165 หมู่ที่ 3"
+                                            },
+                                            "address_th": {
+                                                "type": "string",
+                                                "const": "165 หมู่ที่ 3 ต.คลองใหม่ อ.สามพราน จ.นครปฐม"
+                                            },
+                                            "religion_th": {
+                                                "type": "string",
+                                                "const": "พุทธ"
+                                            },
+                                            "full_name_th": {
+                                                "type": "string",
+                                                "const": "นาย กรรณชัย อ่างแก้ว"
+                                            },
+                                            "last_name_en": {
+                                                "type": "string",
+                                                "const": "Angkaew"
+                                            },
+                                            "last_name_th": {
+                                                "type": "string",
+                                                "const": "อ่างแก้ว"
+                                            },
+                                            "sub_district": {
+                                                "type": "string",
+                                                "const": "ต.คลองใหม่"
+                                            },
+                                            "first_name_en": {
+                                                "type": "string",
+                                                "const": "Kanchai"
+                                            },
+                                            "first_name_th": {
+                                                "type": "string",
+                                                "const": "กรรณชัย"
+                                            },
+                                            "serial_number": {
+                                                "type": "string",
+                                                "const": "1298-04-07051517"
+                                            },
+                                            "middle_name_en": {
+                                                "type": "string",
+                                                "const": ""
+                                            },
+                                            "middle_name_th": {
+                                                "type": "string",
+                                                "const": ""
+                                            },
+                                            "date_of_birth_en": {
+                                                "type": "string",
+                                                "const": "9 Dec. 2002"
+                                            },
+                                            "date_of_birth_th": {
+                                                "type": "string",
+                                                "const": "9 ธ.ค. 2545"
+                                            },
+                                            "date_of_issue_en": {
+                                                "type": "string",
+                                                "const": "5 Jul. 2021"
+                                            },
+                                            "date_of_issue_th": {
+                                                "type": "string",
+                                                "const": "5 ก.ค. 2564"
+                                            },
+                                            "date_of_expiry_en": {
+                                                "type": "string",
+                                                "const": "8 Dec. 2029"
+                                            },
+                                            "date_of_expiry_th": {
+                                                "type": "string",
+                                                "const": "8 ธ.ค. 2572"
+                                            },
+                                            "middle_last_name_en": {
+                                                "type": "string",
+                                                "const": "Angkaew"
+                                            },
+                                            "title_first_name_en": {
+                                                "type": "string",
+                                                "const": "Mr. Kanchai"
+                                            }
+                                        }
+                                    }
+                                },
+                                "required": [
+                                    "result"
+                                ]
+                            }
+                        }
+                    },
+                    "backIdCardResult": {
+                        "type": "object",
+                        "properties": {
+                            "response": {
+                                "type": "object",
+                                "properties": {
+                                    "result":{
+                                        "type": "object",
+                                        "properties": {
+                                            "laser_code": {
+                                                "type": "string",
+                                                "const": "JT0-0707563-50"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "idFaceRecognitionResult": {
+                        "type": "object",
+                        "properties": {
+                            "verified": {
+                                "type": "boolean",
+                                "const": false
+                            },
+                            "confirmed": {
+                                "type": "boolean",
+                                "const": true
+                            }
+                        }
+                    },
+                    "feedback": {
+                        "type": "string",
+                        "const": "ทำศัยกรรม"
+                    },
+                    "meta": {
+                        "type": "object",
+                        "properties": {
+                            "insuredLastName": {
+                                "type": "string",
+                                "const": "อ่างแก้ว"
+                            },
+                            "insuredFirstName": {
+                                "type": "string",
+                                "const": "กรรณชัย"
+                            },
+                            "insuredMiddleName": {
+                                "type": [
+                                    "string",
+                                    "null"
+                                ],
+                                "const": null
+                            }
+                        },
+                        "required": [
+                            "insuredLastName",
+                            "insuredFirstName",
+                            "insuredMiddleName"
+                        ]
+                    },
+                    "kycStatus": {
+                        "type": "string",
+                        "const": "completed"
+                    }
+                },
+                "required": [
+                    "status",
+                    "frontIdCardConfig",
+                    "backIdCardConfig",
+                    "idFaceRecognitionConfig",
+                    "citizenId",
+                    "firstName",
+                    "lastName",
+                    "dateOfBirth",
+                    "email",
+                    "frontIdCardResult",
+                    "backIdCardResult",
+                    "idFaceRecognitionResult",
+                    "feedback",
+                    "meta",
+                    "kycStatus"
+                ]
+            }
+        },
+        "case": {
+            "type": "object",
+            "properties": {
+                "status": {
+                    "type": "string",
+                    "const": "inProgress"
+                },
+                "caseStatus": {
+                    "type": "string",
+                    "const": "inProgress"
+                }
+            },
+            "required": [
+                "status",
+                "caseStatus"
+            ]
+        },
+        "proprietorType": {
+            "type": "string",
+            "const": "insured"
+        },
+        "inviteType": {
+            "type": "string",
+            "const": "email"
+        },
+        "citizenId": {
+            "type": "string",
+            "const": "1729900599685"
+        },
+        "firstName": {
+            "type": "string",
+            "const": "กรรณชัย"
+        },
+        "lastName": {
+            "type": "string",
+            "const": "อ่างแก้ว"
+        },
+        "dateOfBirth": {
+            "type": "string",
+            "format": "date",
+            "const": "2002-12-09"
+        },
+        "email": {
+            "type": "string",
+            "format": "email",
+            "const": "jidapa.o@appman.co.th"
+        },
+        "verificationCache": {
+            "type": "object",
+            "properties": {
+                "meta": {
+                    "type": "object",
+                    "properties": {
+                        "insuredLastName": {
+                            "type": "string",
+                            "const": "อ่างแก้ว"
+                        },
+                        "insuredFirstName": {
+                            "type": "string",
+                            "const": "กรรณชัย"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "idCardConfig": {
+            "type": "object",
+            "properties": {
+                "required": {
+                    "type": "boolean",
+                    "const": true
+                },
+                "isEditable": {
+                    "type": "boolean",
+                    "const": true
+                },
+                "dependenciesRequired": {
+                    "type": "boolean",
+                    "const": false
+                },
+                "threshHold": {
+                    "type": "number",
+                    "const": 0.8
+                },
+                "attempts": {
+                    "type": "integer",
+                    "const": 3
+                }
+            },
+            "required": [
+                "required",
+                "isEditable",
+                "dependenciesRequired",
+                "threshHold",
+                "attempts"
+            ]
+        },
+        "idFaceRecognitionConfig": {
+            "type": "object",
+            "properties": {
+                "required": {
+                    "type": "boolean",
+                    "const": true
+                },
+                "dependenciesRequired": {
+                    "type": "boolean",
+                    "const": false
+                },
+                "threshHold": {
+                    "type": "number",
+                    "const": 0.8
+                },
+                "attempts": {
+                    "type": "integer",
+                    "const": 1
+                },
+                "livenessProvider": {
+                    "type": "string",
+                    "const": "facetecXAWS"
+                }
+            },
+            "required": [
+                "required",
+                "dependenciesRequired",
+                "threshHold",
+                "attempts",
+                "livenessProvider"
+            ]
+        }
+    }
+}

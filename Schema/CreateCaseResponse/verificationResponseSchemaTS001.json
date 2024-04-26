@@ -1,0 +1,167 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "proprietors": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "expiryDuration": {
+                        "type": "string",
+                        "const": "P30D"
+                    },
+                    "proprietorType": {
+                        "type": "string",
+                        "const": "insured"
+                    },
+                    "citizenId": {
+                        "type": "string",
+                        "const": "1729900599685"
+                    },
+                    "firstName": {
+                        "type": "string",
+                        "const": "กรรณชัย"
+                    },
+                    "middleName": {
+                        "type": [
+                            "string",
+                            "null"
+                        ]
+                    },
+                    "lastName": {
+                        "type": "string",
+                        "const": "อ่างแก้ว"
+                    },
+                    "inviteType": {
+                        "type": "string",
+                        "const": "sms"
+                    },
+                    "email": {
+                        "type": [
+                            "string",
+                            "null"
+                        ]
+                    },
+                    "dateOfBirth": {
+                        "type": "string",
+                        "const": "2002-12-09"
+                    },
+                    "verifications": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "frontIdCardConfig": {
+                                    "$ref": "#/definitions/idCardConfig"
+                                },
+                                "backIdCardConfig": {
+                                    "$ref": "#/definitions/idCardConfig"
+                                },
+                                "idFaceRecognitionConfig": {
+                                    "$ref": "#/definitions/idFaceRecognitionConfig"
+                                }
+                            },
+                            "required": [
+                                "frontIdCardConfig",
+                                "backIdCardConfig",
+                                "idFaceRecognitionConfig"
+                            ]
+                        }
+                    }
+                },
+                "required": [
+                    "expiryDuration",
+                    "proprietorType",
+                    "citizenId",
+                    "firstName",
+                    "lastName",
+                    "title",
+                    "dateOfBirth",
+                    "meta",
+                    "verifications"
+                ]
+            }
+        },
+        "attachMeetingRoom": {
+            "type": "boolean"
+        },
+        "status":{
+            "type":  "string",
+            "const": "inProgress"
+        },
+        "caseStatus":{
+            "type":  "string",
+            "const": "inProgress"
+        }
+    },
+    "required": [
+        "caseType",
+        "proprietors",
+        "attachMeetingRoom"
+    ],
+    "definitions": {
+        "idCardConfig": {
+            "type": "object",
+            "properties": {
+                "required": {
+                    "type": "boolean",
+                    "const": true
+                },
+                "isEditable": {
+                    "type": "boolean",
+                    "const": true
+                },
+                "dependenciesRequired": {
+                    "type": "boolean",
+                    "const": false
+                },
+                "threshHold": {
+                    "type": "number",
+                    "threshHold": 0.8
+                },
+                "attempts": {
+                    "type": "integer",
+                    "const": 3
+                }
+            },
+            "required": [
+                "required",
+                "isEditable",
+                "dependenciesRequired",
+                "attempts"
+            ]
+        },
+        "idFaceRecognitionConfig": {
+            "type": "object",
+            "properties": {
+                "required": {
+                    "type": "boolean",
+                    "const": true
+                },
+                "dependenciesRequired": {
+                    "type": "boolean",
+                    "const": false
+                },
+                "threshHold": {
+                    "type": "number",
+                    "const": 0.8
+                },
+                "attempts": {
+                    "type": "integer",
+                    "const": 1
+                },
+                "livenessProvider":{
+                    "type": "string",
+                    "const": "facetecXAWS"
+                }
+            },
+            "required": [
+                "required",
+                "dependenciesRequired",
+                "attempts",
+                "livenessProvider"
+            ]
+        }
+    }
+}

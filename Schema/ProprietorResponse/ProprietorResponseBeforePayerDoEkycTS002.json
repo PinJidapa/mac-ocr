@@ -1,0 +1,178 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+            "verifications": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "frontIdCardConfig": {
+                            "$ref": "#/definitions/idCardConfig"
+                        },
+                        "backIdCardConfig": {
+                            "$ref": "#/definitions/idCardConfig"
+                        },
+                        "idFaceRecognitionConfig": {
+                            "$ref": "#/definitions/idFaceRecognitionConfig"
+                        },
+                        "status": {
+                            "type": "string",
+                            "const": "open"
+                        },
+                        "citizenId":{
+                            "type": "string",
+                            "const": "1239900336573"
+                        },
+                        "lastName":{
+                            "type": "string",
+                            "const": "ดิษเจริญ"
+                        },
+                        "firstName":{
+                            "type": "string",
+                            "const": "อมรรัตน์"
+                        },
+                        "dateOfBirth":{
+                            "type": "string",
+                            "const": "2001-05-21"
+                        },
+                        "meta":{
+                            "type": "object",
+                            "properties":{
+                                "insuredLastName":{
+                                    "type": "string",
+                                    "const": "อ่างแก้ว"
+                            },
+                            "insuredFirstName": {
+                                "type": "string",
+                                "const": "กรรณชัย"
+                            }
+                        }
+                        },
+                        "kycStatus":{
+                            "type": "string",
+                            "const": "open"
+                        }
+                    },
+                    "required": [
+                        "frontIdCardConfig",
+                        "backIdCardConfig",
+                        "idFaceRecognitionConfig"
+                    ]
+                }
+            },
+            "case":{
+                "type":"object",
+                "properties": {
+                    "status":{
+                        "type":  "string",
+                        "const": "inProgress"
+                    },
+                    "caseStatus": {
+                        "type": "string",
+                        "const": "inProgress"
+                    }
+                }
+            },
+            "proprietorType":{
+                "type": "string",
+                "const": "payer"
+            },
+            "firstName":{
+                "type": "string",
+                "const": "อมรรัตน์"
+            },
+            "lastName":{
+                "type": "string",
+                "const": "ดิษเจริญ"
+            },
+            "dateOfBirth":{
+                "type": "string",
+                "const": "2001-05-21"
+            },
+            "verificationCache":{
+                "type":"object",
+                "properties": {
+                    "meta":{
+                        "type":"object",
+                        "properties":{
+                            "insuredLastName":{
+                                "type":  "string",
+                                "const": "อ่างแก้ว"
+                            },
+                            "insuredFirstName": {
+                                "type": "string",
+                                "const": "กรรณชัย"
+                            }
+                        }
+                    }
+                }
+            }
+
+
+    },
+    "definitions": {
+        "idCardConfig": {
+            "type": "object",
+            "properties": {
+                "required": {
+                    "type": "boolean",
+                    "const": true
+                },
+                "isEditable": {
+                    "type": "boolean",
+                    "const": true
+                },
+                "dependenciesRequired": {
+                    "type": "boolean",
+                    "const": false
+                },
+                "threshHold": {
+                    "type": "number",
+                    "threshHold": 0.8
+                },
+                "attempts": {
+                    "type": "integer",
+                    "const": 3
+                }
+            },
+            "required": [
+                "required",
+                "isEditable",
+                "dependenciesRequired",
+                "attempts"
+            ]
+        },
+        "idFaceRecognitionConfig": {
+            "type": "object",
+            "properties": {
+                "required": {
+                    "type": "boolean",
+                    "const": true
+                },
+                "dependenciesRequired": {
+                    "type": "boolean",
+                    "const": false
+                },
+                "threshHold": {
+                    "type": "number",
+                    "const": 0.8
+                },
+                "attempts": {
+                    "type": "integer",
+                    "const": 1
+                },
+                "livenessProvider":{
+                    "type": "string",
+                    "const": "facetecXAWS"
+                }
+            },
+            "required": [
+                "required",
+                "dependenciesRequired",
+                "attempts",
+                "livenessProvider"
+            ]
+        }
+    }
+}
